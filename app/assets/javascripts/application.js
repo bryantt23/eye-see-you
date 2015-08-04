@@ -71,14 +71,24 @@ var DrawEye = function(eyecontainer, pupil, eyeposx, eyeposy, eyer){
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
-function getRandomArbitrary() {
-    return Math.random() * 400;
+ function getRandomArbitrary(min, max) {
+     return Math.random() * (max - min) + min;
+ }
+
+
+var eye = new DrawEye("eyex", "pupilx", getRandomArbitrary(), getRandomArbitrary(), getRandomArbitrary());
+
+// add 100 sub-object values
+for(i = 0; i < 11; ++i) {
+
+var eye = new DrawEye("eye"+i.toString(), "pupil"+i.toString(), getRandomArbitrary(0,400), getRandomArbitrary(0,300), getRandomArbitrary(5,100))
+
+
 }
 
 
-var eye = new DrawEye("eye1", "pupil1", 97, 17, 17);
-var eye = new DrawEye("eye2", "pupil2", 57, 27, 27);
-var eye = new DrawEye("eye3", "pupil3", getRandomArbitrary(), getRandomArbitrary(), getRandomArbitrary());
+
+// var eye = new DrawEye("eye1", "pupil1", 97, 17, 17);
 // var eye = new DrawEye("eye2", "pupil2", 129, 12, 23);
 // var eye = new DrawEye("eye3", "pupil3", 181, 14, 19);
 // var eye = new DrawEye("eye4", "pupil4", 212, 15, 17);
